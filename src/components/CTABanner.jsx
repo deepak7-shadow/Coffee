@@ -98,34 +98,33 @@ export default function CTABanner({ onAddToCart }) {
   const quizModal = (
     <AnimatePresence>
       {quizOpen && (
-        <>
-          {/* Overlay */}
+        /* Single overlay that is ALSO the flex centering container */
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setQuizOpen(false)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            backgroundColor: 'rgba(7, 3, 1, 0.55)',
+            backdropFilter: 'blur(6px)',
+            WebkitBackdropFilter: 'blur(6px)',
+            zIndex: 9000,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '20px',
+          }}
+        >
+          {/* Modal — no position:fixed, no transform needed — centered by parent flex */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setQuizOpen(false)}
-            style={{
-              position: 'fixed',
-              inset: 0,
-              backgroundColor: 'rgba(7, 3, 1, 0.55)',
-              backdropFilter: 'blur(6px)',
-              WebkitBackdropFilter: 'blur(6px)',
-              zIndex: 9000,
-            }}
-          />
-
-          {/* Modal */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            initial={{ opacity: 0, scale: 0.92, y: 16 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            exit={{ opacity: 0, scale: 0.92, y: 16 }}
+            onClick={(e) => e.stopPropagation()}
             style={{
-              position: 'fixed',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              width: '90%',
+              width: '100%',
               maxWidth: '520px',
               maxHeight: '88vh',
               overflowY: 'auto',
@@ -135,7 +134,6 @@ export default function CTABanner({ onAddToCart }) {
               borderRadius: '24px',
               boxShadow: '0 24px 60px rgba(0, 0, 0, 0.85)',
               padding: '32px',
-              zIndex: 9001,
               fontFamily: 'Plus Jakarta Sans, sans-serif',
             }}
           >
@@ -301,7 +299,7 @@ export default function CTABanner({ onAddToCart }) {
               </div>
             )}
           </motion.div>
-        </>
+        </motion.div>
       )}
     </AnimatePresence>
   )
