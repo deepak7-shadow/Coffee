@@ -150,3 +150,32 @@ body {
 .steam-particle-3 {
   animation: steam-rise 4.8s ease-out 2.7s infinite;
 }
+
+/* CTA Banner Spoon Responsive Positioning */
+.cta-spoon-container {
+  position: absolute;
+  right: clamp(-50px, -2vw, 0px);
+  bottom: clamp(10px, 3vh, 35px);
+  width: clamp(340px, 38vw, 560px);
+  pointer-events: none;
+  user-select: none;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+@media (max-width: 960px) {
+  .cta-spoon-container {
+    width: clamp(280px, 42vw, 400px);
+    right: -30px;
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 640px) {
+  .cta-spoon-container {
+    width: 260px;
+    right: -50px;
+    bottom: 5px;
+    opacity: 0.22;
+  }
+}

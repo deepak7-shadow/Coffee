@@ -339,26 +339,25 @@ export default function CTABanner({ onAddToCart }) {
           pointerEvents: 'none',
         }} />
 
-        {/* Spoon — floating levitation animation */}
-        <motion.img
-          src="/spoon.png"
-          alt="Artisan brass coffee spoon"
-          aria-hidden
-          draggable={false}
-          animate={{ y: [0, -18, 0] }}
-          transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-          style={{
-            position: 'absolute',
-            right: '-240px',
-            bottom: '5px',
-            width: 'clamp(680px, 72vw, 1000px)',
-            height: 'auto',
-            zIndex: 15,
-            pointerEvents: 'none',
-            userSelect: 'none',
-            filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.8))',
-          }}
-        />
+        {/* Spoon — floating levitation animation on the right side */}
+        <motion.div
+          className="cta-spoon-container"
+          animate={{ y: [0, -14, 0] }}
+          transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut' }}
+        >
+          <img
+            src="/spoon.png"
+            alt="Artisan brass coffee spoon with roasted beans"
+            aria-hidden
+            draggable={false}
+            style={{
+              width: '100%',
+              height: 'auto',
+              display: 'block',
+              filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.85))',
+            }}
+          />
+        </motion.div>
 
         {/* Main Container */}
         <div style={{
@@ -367,18 +366,21 @@ export default function CTABanner({ onAddToCart }) {
           width: '100%',
           maxWidth: '1240px',
           margin: '0 auto',
-          padding: '0 clamp(20px, 5vw, 80px)',
+          padding: '0 clamp(24px, 5vw, 60px)',
           display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          gap: '16px',
-          maxWidth: '560px',
+          alignItems: 'center',
+          justifyContent: 'flex-start',
         }}>
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
+            style={{
+              maxWidth: '500px',
+              width: '100%',
+              zIndex: 2,
+            }}
           >
             <div style={{
               display: 'inline-flex',
@@ -398,22 +400,22 @@ export default function CTABanner({ onAddToCart }) {
 
             <h2 style={{
               fontFamily: 'Cinzel, serif',
-              fontSize: 'clamp(2rem, 4.5vw, 3.2rem)',
+              fontSize: 'clamp(1.85rem, 3.2vw, 2.65rem)',
               color: '#f5e9d5',
-              lineHeight: 1.18,
-              marginBottom: '14px',
-              letterSpacing: '-0.01em',
+              lineHeight: 1.22,
+              marginBottom: '16px',
+              letterSpacing: '0.01em',
             }}>
               Find out which artisan coffee<br />
               <span style={{ color: '#dfb755' }}>suits your palate</span>
             </h2>
 
             <p style={{
-              fontSize: 'clamp(14px, 1.6vw, 16px)',
+              fontSize: 'clamp(14px, 1.4vw, 15.5px)',
               color: '#c4ab89',
               lineHeight: 1.7,
               marginBottom: '28px',
-              maxWidth: '420px',
+              maxWidth: '430px',
             }}>
               Answer 3 quick questions about your flavor preferences and we'll personally recommend your signature Broven brew — Bangalore, 2026.
             </p>
