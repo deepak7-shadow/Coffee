@@ -57,9 +57,9 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantit
             style={{
               position: 'fixed',
               inset: 0,
-              backgroundColor: 'rgba(7, 3, 1, 0.75)',
-              backdropFilter: 'blur(8px)',
-              WebkitBackdropFilter: 'blur(8px)',
+              backgroundColor: 'rgba(7, 3, 1, 0.5)',
+              backdropFilter: 'blur(5px)',
+              WebkitBackdropFilter: 'blur(5px)',
               zIndex: 90,
             }}
           />

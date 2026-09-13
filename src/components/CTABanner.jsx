@@ -235,8 +235,9 @@ export default function CTABanner({ onAddToCart }) {
               style={{
                 position: 'fixed',
                 inset: 0,
-                backgroundColor: 'rgba(7, 3, 1, 0.8)',
-                backdropFilter: 'blur(12px)',
+                backgroundColor: 'rgba(7, 3, 1, 0.55)',
+                backdropFilter: 'blur(6px)',
+                WebkitBackdropFilter: 'blur(6px)',
                 zIndex: 90,
               }}
             />
