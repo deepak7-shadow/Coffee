@@ -253,6 +253,8 @@ export default function CTABanner({ onAddToCart }) {
                 transform: 'translate(-50%, -50%)',
                 width: '90%',
                 maxWidth: '520px',
+                maxHeight: '88vh',
+                overflowY: 'auto',
                 backgroundColor: '#1a0d05',
                 backgroundImage: 'radial-gradient(circle at 50% 0%, rgba(223, 183, 85, 0.15), transparent 70%)',
                 border: '1px solid rgba(223, 183, 85, 0.35)',
